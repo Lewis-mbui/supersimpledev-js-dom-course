@@ -42,7 +42,9 @@
 
         let cost = Number(inputElement.value);
 
-        if (cost < 40) cost += 10;
+        if (cost < 40) {
+          cost = (cost * 100 + 1000) / 100;
+        }
 
         document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
       }

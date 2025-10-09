@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:," />
+    <title>Type Something</title>
+  </head>
+  <body>
+    <input
+      placeholder="Type something"
+      class="js-text-input"
+      onkeyup="
+      typeSomething();
+      "
+    />
+
+    <p class="js-text"></p>
+
+    <script>
+      function typeSomething() {
+        const char = document.querySelector(".js-text-input").value;
+
+        document.querySelector(".js-text").innerHTML = char;
+      }
+    </script>
+  </body>
+</html>
