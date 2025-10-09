@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:," />
+    <title>Submit Name</title>
+  </head>
+  <body>
+    <input
+      placeholder="Name"
+      class="js-name-input"
+      onkeydown="
+      if (event.key === 'Enter') updateName();
+    "
+    />
+
+    <button
+      onclick="
+      updateName();
+    "
+    >
+      Submit
+    </button>
+
+    <p class="js-name"></p>
+
+    <script>
+      function updateName() {
+        const inputElem = document.querySelector(".js-name-input");
+        const name = inputElem.value;
+
+        document.querySelector(".js-name").innerHTML = `Your name is: ${name}`;
+      }
+    </script>
+  </body>
+</html>
