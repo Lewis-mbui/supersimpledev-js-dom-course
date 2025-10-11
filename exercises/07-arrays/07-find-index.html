@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Index</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <script>
+      const strings = ["hello", "world", "search", "good", "search"];
+      console.log(findIndex(strings, "search"));
+
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          const str = array[i];
+
+          if (str === word) return i;
+        }
+
+        return -1;
+      }
+    </script>
+  </body>
+</html>
