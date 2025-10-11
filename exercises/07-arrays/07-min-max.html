@@ -10,15 +10,20 @@
       console.log(minMax(nums));
 
       function minMax(nums) {
-        let min = nums[0];
-        let max = nums[0];
+        const result = {
+          min: null,
+          max: null,
+        };
 
         for (let i = 0; i < nums.length; i++) {
-          if (nums[i] < min) min = nums[i];
-          if (nums[i] > max) max = nums[i];
+          const num = nums[i];
+
+          if (result.min === null || num < result.min) result.min = num;
+
+          if (result.max === null || num > result.max) result.max = num;
         }
 
-        return { min, max };
+        return result;
       }
     </script>
   </body>

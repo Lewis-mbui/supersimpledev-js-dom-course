@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count Words</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <script>
+      const words = ["apple", "grape", "apple", "apple"];
+      console.log(countWords(words));
+
+      function countWords(words) {
+        const result = {};
+
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+
+          // result[word] = (result[word] || 0) + 1;
+
+          !result[word] ? (result[word] = 1) : result[word]++;
+        }
+
+        return result;
+      }
+    </script>
+  </body>
+</html>
