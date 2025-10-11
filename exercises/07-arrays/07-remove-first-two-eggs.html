@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remove First Tow Eggs</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <script>
+      const foods = ["egg", "apple", "egg", "egg", "ham"];
+      console.log(removeEgg(foods));
+
+      // Remove only the first two eggs
+      function removeEgg(foods) {
+        const result = [];
+        let eggsRemoved = 0;
+
+        for (let i = 0; i < foods.length; i++) {
+          const food = foods[i];
+
+          if (food === "egg" && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+
+          result.push(food);
+        }
+        return result;
+      }
+    </script>
+  </body>
+</html>
