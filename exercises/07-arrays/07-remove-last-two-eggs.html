@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Remove First Two Eggs</title>
+    <title>Remove Last Two Eggs</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
@@ -14,8 +14,11 @@
         const result = [];
         let eggsRemoved = 0;
 
-        for (let i = 0; i < foods.length; i++) {
-          const food = foods[i];
+        const foodsCopy = foods.slice();
+        foodsCopy.reverse();
+
+        for (let i = 0; i < foodsCopy.length; i++) {
+          const food = foodsCopy[i];
 
           if (food === "egg" && eggsRemoved < 2) {
             eggsRemoved++;
@@ -24,6 +27,8 @@
 
           result.push(food);
         }
+
+        result.reverse();
         return result;
       }
     </script>
