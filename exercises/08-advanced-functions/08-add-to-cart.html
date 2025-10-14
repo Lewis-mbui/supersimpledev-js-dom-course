@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:," />
+    <title>Add to Cart</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      displayMessage();
+    "
+    >
+      Add to cart
+    </button>
+    <p class="js-message"></p>
+    <script>
+      function displayMessage() {
+        const messElement = document.querySelector(".js-message");
+        messElement.innerHTML = "Added";
+        setTimeout(() => {
+          messElement.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
