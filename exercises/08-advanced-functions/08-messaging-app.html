@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:," />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      document.title = "App";
+
+      updateTitle();
+
+      function updateTitle() {
+        setInterval(() => {
+          document.title =
+            document.title === "App" ? "(2) New Messages" : "App";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

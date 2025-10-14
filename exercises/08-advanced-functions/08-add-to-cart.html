@@ -14,10 +14,13 @@
     </button>
     <p class="js-message"></p>
     <script>
+      let timeoutId;
+
       function displayMessage() {
+        clearInterval(timeoutId);
         const messElement = document.querySelector(".js-message");
         messElement.innerHTML = "Added";
-        setTimeout(() => {
+        timeoutId = setTimeout(() => {
           messElement.innerHTML = "";
         }, 2000);
       }
