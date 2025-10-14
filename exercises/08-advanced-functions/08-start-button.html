@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:," />
+    <title>Start</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      const buttonElement = document.querySelector('.js-start-button');
+      setTimeout(() => {
+        buttonElement.innerText = 'Finished!';
+      }, 1000);
+      buttonElement.innerText = 'Loading...';
+    "
+      class="js-start-button"
+    >
+      Start
+    </button>
+    <script></script>
+  </body>
+</html>
