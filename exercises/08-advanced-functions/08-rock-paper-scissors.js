@@ -22,9 +22,11 @@ function autoPlay() {
     }, 1000);
 
     isAutoPlaying = true;
+    autoPlayButton.innerHTML = 'Stop Playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    autoPlayButton.innerHTML = 'AutoPlay';
   }
 }
 
