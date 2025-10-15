@@ -27,20 +27,13 @@
 
     <p class="js-score score"></p>
 
-    <button
-      onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    "
-      class="reset-score-button"
-    >
+    <button class="js-reset-score-button reset-score-button">
       Reset Score
     </button>
 
     <button class="js-auto-play-button auto-play-button">Auto Play</button>
+
+    <div class="js-confirmation-message confirmation-message"></div>
 
     <script src="08-rock-paper-scissors.js"></script>
   </body>

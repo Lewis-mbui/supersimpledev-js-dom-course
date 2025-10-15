@@ -46,12 +46,18 @@ document.querySelector('.js-scissors-button')
   });
 
 document.body.addEventListener('keydown', (event) => {
+  console.log(event.key);
+
   if (event.key === 'r') {
     playGame('rock');
   } else if (event.key === 'p') {
     playGame('paper');
   } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === 'Backspace') {
+    resetScore();
   }
 });
 
@@ -98,6 +104,35 @@ function updateScoreElement() {
   document.querySelector(
     ".js-score"
   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
+
+const resetScoreButton = document.querySelector('.js-reset-score-button');
+resetScoreButton.addEventListener('click', () => {
+  resetScore();
+});
+
+function resetScore() {
+  const messElement = document.querySelector('.js-confirmation-message');
+  messElement.innerHTML = `
+    <span>Are you sure you want to reset the score?</span>
+    <button class="js-yes-confirmation-button confirmation-button">Yes</button>
+    <button class="js-no-confirmation-button confirmation-button">No</button>
+  `;
+
+  document.querySelector('.js-yes-confirmation-button')
+    .addEventListener('click', () => {
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+      messElement.innerHTML = '';
+    });
+
+  document.querySelector('.js-no-confirmation-button')
+    .addEventListener('click', () => {
+      messElement.innerHTML = '';
+    });
 }
 
 function pickComputerMove() {
