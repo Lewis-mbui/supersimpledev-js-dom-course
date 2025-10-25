@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XHR GET</title>
+    <title>FETCH GET</title>
     <link rel="icon" href="data:," />
   </head>
   <body>
     <script>
-      const xhr = new XMLHttpRequest();
-
-      xhr.addEventListener("load", () => {
-        console.log(xhr.response);
-      });
-
-      xhr.open("GET", "https://supersimplebackend.dev/greeting");
-      xhr.send();
+      fetch("https://supersimplebackend.dev/greeting")
+        .then((response) => {
+          return response.text();
+        })
+        .then((message) => {
+          console.log(message);
+        });
     </script>
   </body>
 </html>
