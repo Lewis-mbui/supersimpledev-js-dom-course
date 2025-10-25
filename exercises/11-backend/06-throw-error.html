@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THROW</title>
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <script>
+      async function postGreeting() {
+        try {
+          const response = await fetch(
+            "https://supersimplebackend.dev/greeting",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+            }
+          );
+
+          if (response.status >= 400) throw response;
+
+          const greeting = await response.text();
+          console.log(greeting);
+        } catch (error) {
+          if (error.status === 400) {
+            const json = await error.json();
+            console.log(json);
+          } else console.log("Network Error");
+        }
+      }
+
+      postGreeting();
+    </script>
+  </body>
+</html>
